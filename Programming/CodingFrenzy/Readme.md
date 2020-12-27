@@ -1,5 +1,19 @@
 # 瘋狂程設使用手冊
 
+目錄
+
+- [註冊瘋狂帳號](#註冊瘋狂帳號)
+- [軟體安裝](#軟體安裝)
+	- [安裝 C/C++ 編譯器](#安裝-cc-編譯器)
+		- [MinGW](#mingw)
+		- [DevC++](#devc)
+		- [Microsoft Visual C++ 2008 Express](#microsoft-visual-c-2008-express)
+		- [Microsoft Visual C++ 2005 Express](#microsoft-visual-c-2005-express)
+	- [安裝 Java JDK](#安裝-java-jdk)
+	- [安裝 Python](#安裝-python)
+- [登入瘋狂程設](#登入瘋狂程設)
+- [解題步驟](#解題步驟)
+
 自動閱卷的程式設計上機考試題庫暨考試系統
 
 為 2013/10/1 起的 [大學程式能力檢定(CPE)](https://cpe.cse.nsysu.edu.tw/index.php) 考試所採用評判系統
