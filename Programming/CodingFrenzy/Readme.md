@@ -412,10 +412,3 @@ C/C++語言使用者建議安裝 MinGW 環境的 gcc/g++ 編譯器。
         return 0;
     }
     ```
-
-
-
-## MEMO
-
-huangsb / 5ixEzmq2PcEnWL6
-
