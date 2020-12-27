@@ -59,11 +59,11 @@
     * 請下載 [Microsoft .NET Framework 3.5 安裝程式(dotNetFx35setup.exe)](https://www.microsoft.com/zh-tw/download/details.aspx?id=21)
     * 執行安裝程式(`dotNetFx35setup.exe`)，然後點選「下載並安裝此功能」(需要啟用 Windows Update)
 
-        ![](./images/02.PNG)
+        ![](./images/02.png)
 
     * 當顯示以下畫面時，表示 Microsoft .NET Framework 3.5 已安裝完成：
 
-        ![](./images/03.PNG)
+        ![](./images/03.png)
 
     * 請點選「關閉」按鈕關閉視窗
 
@@ -290,11 +290,11 @@ C/C++語言使用者建議安裝 MinGW 環境的 gcc/g++ 編譯器。
 
 1. 執行瘋狂程設軟體，請雙擊「`CodingFrenzy.exe`」：
 
-    ![](./images/01.PNG)
+    ![](./images/01.png)
 
 2. 點選「同意以下各授權規定」：
 
-    ![](./images/04.PNG)
+    ![](./images/04.png)
 
 3. 進入主畫面後，輸入註冊時填寫的學號或：
 
@@ -302,7 +302,7 @@ C/C++語言使用者建議安裝 MinGW 環境的 gcc/g++ 編譯器。
     * 密碼：輸入註冊時設定的密碼
     * 點選「會員登入」按鈕進行登入
 
-    ![](./images/05.PNG)
+    ![](./images/05.png)
 
 4. 進入「程式廣場」畫面，左方課程列表中有各種課程，請點選「程式練習廣場」。
 
