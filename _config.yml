@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+
+# the little icon that appears in the browser window's tab
+favicon: favicon.ico
