@@ -1,0 +1,35 @@
+body {
+    font-size: 20px;
+}
+
+.example {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 0.01em 16px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+.markdown-section>:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) code {
+    font-size: 15px
+}
+
+.sidebar ul li a {
+    font-size: 18px;
+    /* line-height: 26px; */
+}
+
+.sidebar-nav p {
+    margin-left: 5px;
+}
+.sidebar ul li p.active>a {
+    border-right: 2px solid;
+    color: var(--theme-color, #42b983);
+    font-weight: 600;
+}
+.sidebar-nav ul li, .app-sub-sidebar li {
+    list-style-type: none;
+}
+
+.markdown-section ol {
+    line-height: 1.6em;
+}
