@@ -10,4 +10,4 @@
     * [安裝 TortoiseGit](Tools/Git/Install-TortoiseGit/Readme.md)
     * [TortoiseGit 教學](Tools/Git/Use-TortoiseGit/Readme.md)
 * PHP
-  * [使用 VS Code 偵錯 PHP 程式](PHP/php%20debug.md)
+  * [使用 VS Code 偵錯 PHP 程式](PHP/php_debug.md)
