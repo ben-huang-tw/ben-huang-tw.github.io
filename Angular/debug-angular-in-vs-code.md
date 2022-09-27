@@ -49,10 +49,17 @@ code .
 按 Debugger for Chrome 的 Install 按鈕 
  
 ## 第 3 步 - 組態偵錯環境
- 
+
+在新建 Angular 專案後，若已新增 `.vscode\launch.json` 檔案(檔案內容如下畫面)，可略過此步驟。
+
+![](images/2022-09-27-11-55-38.png)
+
+> 註： `preLaunchTask` 屬性表示偵錯前要執行的指令，所以上圖的組態表示不需要自行輸入 `ng serve -o` 命令來執行應用程式。
+
 在 VS Code 環境下：點擊左側的 Run and Debug 按鈕（或 Ctrl+Shift+D） 
 
 ![](images/2022-09-27-11-02-53.png)
+
 
 如果尚未組態執行和偵錯（尚未創建 `launch.json` 檔案），VS Code 會顯示 RUN AND DEBUG: RUN 初始檢視
  
