@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@2"></script>
+  <style>
+    p.td-txt, .td-img {
+    display: inline-block;
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 2px;
+}
+.ts-transac-comp-32 table tr td {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: #323232;
+    padding: 0px;
+    border: solid 1px #d5d5d5;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.ts-transac-comp-32 table.left tr td, .ts-transac-comp-32 table.right tr td {
+    padding: 10px 40px;
+    border: 0;
+    border-bottom: solid 1px #d5d5d5;
+    
+}
+.ts-transac-comp-32 table.right tr td:not(:first-child) {
+  border-left: solid 1px #d5d5d5;
+}
+.ts-transac-comp-32 table tr td {
+    width: 280px;
+    border-right: solid 1px #d5d5d5;
+}
+.ts-transac-comp-32-3 .td-img img {
+    display: inline-block;
+    height: 16px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <div class="ga-tab-content-container tab-content tab-content-sty-gray">
+    
+  </div>
+  <script src="https://www.taishinbank.com.tw/eServiceA/transactionrate/transactionrateExport.jsp?no=5">
+
+  </script>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+    window.onload = function() {
+      document.getElementsByClassName('ts-transac-comp-28')[0].remove();
+      document.getElementsByClassName('ts-transac-comp-24')[0].remove();      
+      document.getElementsByClassName('mobile_version')[0].remove();
+      document.getElementById('tab3form').action = 'https://www.taishinbank.com.tw/TSB/personal/deposit/lookup/history/';
+    };
+  </script>
+</body>
+</html>
