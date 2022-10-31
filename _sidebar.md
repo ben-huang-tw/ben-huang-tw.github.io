@@ -13,3 +13,5 @@
   * [使用 VS Code 偵錯 PHP 程式](PHP/php_debug.md)
 * Angular
   * [使用 VS Code 偵錯 Angular 程式](Angular/debug-angular-in-vs-code.md)
+* 台新銀行
+  * <a href="taishinbank/foreign-exchange-rates/" target="_blank">台新銀行即時匯率</a>
