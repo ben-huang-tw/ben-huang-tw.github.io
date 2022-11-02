@@ -15,3 +15,5 @@
   * [使用 VS Code 偵錯 Angular 程式](Angular/debug-angular-in-vs-code.md)
 * 台新銀行
   * <a href="taishinbank/foreign-exchange-rates/" target="_blank">台新銀行即時匯率</a>
+* 跑步
+  * <a href="Running/half-marathon-training-schedule.html" target="_blank">半馬初跑者訓練計畫表 + 產生器</a>

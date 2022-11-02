@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>半馬初跑者訓練計畫表 + 產生器</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+  <main id="app">
+    <div class="container py-4">
+      <h1 class="text-center">半馬初跑者訓練計畫表</h1>
+      <table class="table table-bordered table-striped table-hover text-center">
+        <thead>
+          <tr>
+            <th>週期</th>
+            <th class="table-warning">第1天</th>
+            <th>第2天</th>
+            <th>第3天</th>
+            <th>第4天</th>
+            <th class="table-warning">第5天</th>
+            <th>第6天</th>
+            <th>第7天</th>
+            <th class="table-info">總公里數</th>
+          </tr>
+        </thead>
+        
+        <tr v-for="week in plan.weeks">
+          <th scope="row">{{week.no}}</th>
+          <td v-for="(day, index) in week.days" v-bind:class="{ 'table-warning': index == 0 || index == 4 }"><span v-if="day.date">{{day.date}} - </span>{{day.desc}}</td>
+          <td class="table-info">{{Math.round(week.totalDistance)}}</td>
+        </tr>
+      </table>
+      <p>輕鬆: 能邊聊天的速度,輕鬆的,約比馬拉松賽速度慢31~56秒。長跑: 每個週期最長的一次練跑,約為當週總公里數的25%:要用輕鬆的速度跑。</p>
+      <div>
+        <div class="mb-3 row">
+          <label for="competitionDate" class="col-sm-2 col-form-label">請選擇半馬比賽日期</label>
+          <div class="col-sm-10 col-md-2">
+            <input type="date" class="form-control" v-model="competitionDate" id="competitionDate">
+          </div>
+          
+          <div class="btn-group  col-md-5" role="group" aria-label="Basic example">
+            <button v-on:click="generate" type="button" class="btn btn-primary col-md-2">產生計畫表</button>
+            <button v-on:click="download" type="button" class="btn btn-success col-md-2">下載Google日曆檔</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script>
+    var dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit'};
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        competitionDate: new Date().toLocaleDateString('zh-TW', dateOptions).replace(/\//g, '-'),
+        plan: {
+          weeks: [
+            {
+              no: 1,
+              days: [
+                { date: null, distance: 0, desc: '休息' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 8, desc: '8公里長跑' }
+              ]
+            },
+            {
+              no: 2,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 8, desc: '8公里長跑' }
+              ]
+            },
+            {
+              no: 3,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 8, desc: '8公里輕鬆' },
+                { distance: 10, desc: '10公里長跑' }
+              ]
+            },
+            {
+              no: 4,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 10, desc: '10公里輕鬆' },
+                { distance: 11, desc: '11公里長跑' }
+              ]
+            },
+            {
+              no: 5,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 10, desc: '10公里輕鬆' },
+                { distance: 11, desc: '11公里長跑' }
+              ]
+            },
+            {
+              no: 6,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 11, desc: '11公里輕鬆' },
+                { distance: 13, desc: '13公里長跑' }
+              ]
+            },
+            {
+              no: 7,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 11, desc: '11公里輕鬆' },
+                { distance: 13, desc: '13公里長跑' }
+              ]
+            },
+            {
+              no: 8,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 8, desc: '8公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 11, desc: '11公里輕鬆' },
+                { distance: 14, desc: '14公里長跑' }
+              ]
+            },
+            {
+              no: 9,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 8, desc: '8公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 11, desc: '11公里輕鬆' },
+                { distance: 14, desc: '14公里長跑' }
+              ]
+            },
+            {
+              no: 10,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 8, desc: '8公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 11, desc: '11公里輕鬆' },
+                { distance: 16, desc: '16公里長跑' }
+              ]
+            },
+            {
+              no: 11,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 8, desc: '8公里輕鬆' },
+                { distance: 13, desc: '13公里輕鬆' }
+              ]
+            },
+            {
+              no: 12,
+              days: [
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 6, desc: '6公里輕鬆' },
+                { distance: 0, desc: '休息' },
+                { distance: 5, desc: '5公里輕鬆' },
+                { distance: 21.0975, desc: '半程馬拉松賽' }
+              ]
+            },
+          ]
+        }
+      },
+      methods: {
+        generate: function (event) {
+          var endDate = new Date(this.competitionDate);
+          endDate.setMinutes(endDate.getTimezoneOffset());
+          var startDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() - 83);
+          var mmddOptions = { month: '2-digit', day: '2-digit'};
+          var i = 0;
+          this.plan.weeks.forEach(week => {
+            week.days.forEach(day => {
+              var d = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
+              day.date = d.toLocaleDateString('zh-TW', mmddOptions);
+              i++;
+            });
+          });
+        },
+        download: function (event) {
+          var fileContent = 'Subject,Start Date,Start Time,End Date,End Time,All Day Event,Description,Location,Private';
+
+          var endDate = new Date(this.competitionDate);
+          var startDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() - 83);
+          var i = 0;
+          this.plan.weeks.forEach(week => {
+            week.days.forEach(day => {
+              if (day.distance > 0) {
+                var d = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
+                var startDateString = d.toLocaleDateString('zh-TW', dateOptions).replace(/\//g, '-');
+                fileContent += `\n${day.desc},${startDateString},,${startDateString},,TRUE,,,TRUE`;
+              }
+              i++;
+            });
+          });
+
+          var dateString = endDate.toLocaleDateString('zh-TW', dateOptions).replace(/\//g, '')
+          var a = document.createElement("a");
+          a.href = window.URL.createObjectURL(new Blob([fileContent], { type: "text/plain" }));
+          a.download = `半馬訓練計畫表-${dateString}.csv`;
+          a.click();
+        }
+      },
+      created() {
+        this.plan.weeks.forEach(week => {
+          week.totalDistance = week.days.reduce((a, b) => a + b.distance, 0);
+        });
+      }
+    });
+ 
+  </script>
+</body>
+</html>
