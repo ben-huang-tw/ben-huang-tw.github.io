@@ -15,20 +15,14 @@
         <thead>
           <tr>
             <th>週期</th>
-            <th class="table-warning">第1天</th>
-            <th>第2天</th>
-            <th>第3天</th>
-            <th>第4天</th>
-            <th class="table-warning">第5天</th>
-            <th>第6天</th>
-            <th>第7天</th>
+            <th v-for="(item, index) in plan.headers" v-bind:class="{ 'table-warning': index == 0 || index == 4 }">{{item.title}}<span v-if="item.weekday"><br>{{item.weekday}}</th>
             <th class="table-info">總公里數</th>
           </tr>
         </thead>
         
         <tr v-for="week in plan.weeks">
           <th scope="row">{{week.no}}</th>
-          <td v-for="(day, index) in week.days" v-bind:class="{ 'table-warning': index == 0 || index == 4 }"><span v-if="day.date">{{day.date}} - </span>{{day.desc}}</td>
+          <td v-for="(day, index) in week.days" v-bind:class="{ 'table-warning': index == 0 || index == 4 || day.distance == 0 }"><span v-if="day.date">{{day.date}} - </span>{{day.desc}}</td>
           <td class="table-info">{{Math.round(week.totalDistance)}}</td>
         </tr>
       </table>
@@ -61,6 +55,15 @@
         message: 'Hello Vue!',
         competitionDate: new Date().toLocaleDateString('zh-TW', dateOptions).replace(/\//g, '-'),
         plan: {
+          headers : [
+                { title: '第1天', weekday: ''},
+                { title: '第2天', weekday: ''},
+                { title: '第3天', weekday: ''},
+                { title: '第4天', weekday: ''},
+                { title: '第5天', weekday: ''},
+                { title: '第6天', weekday: ''},
+                { title: '第7天', weekday: ''}
+              ],
           weeks: [
             {
               no: 1,
@@ -219,6 +222,10 @@
           this.plan.weeks.forEach(week => {
             week.days.forEach(day => {
               var d = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
+              if (i < this.plan.headers.length) {
+                this.plan.headers[i].weekday = d.toLocaleDateString('zh-TW', { weekday: 'long' });
+              }
+
               day.date = d.toLocaleDateString('zh-TW', mmddOptions);
               i++;
             });
