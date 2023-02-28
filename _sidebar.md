@@ -13,6 +13,9 @@
   * [使用 VS Code 偵錯 PHP 程式](PHP/php_debug.md)
 * Angular
   * [使用 VS Code 偵錯 Angular 程式](Angular/debug-angular-in-vs-code.md)
+* TypeScript
+  * 手冊
+    * [基礎類型](TypeScript/handbook/basic-types.md)
 * Vue
   * [Vue v2 快速入門](Vue/Readme.md)
 * 台新銀行
