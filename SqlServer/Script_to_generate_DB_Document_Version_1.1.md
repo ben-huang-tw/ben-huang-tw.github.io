@@ -1,3 +1,14 @@
+# Generate DB Schema HTML
+
+```
+@echo off
+sqlcmd -E -S localhost -i "D:\Script_to_generate_DB_Document_Version_1.1.sql" -v FilterObjectName="EHG%%" -v FilterObjectList="ApplyCardApplication,ApplyCardForm,ApplyCardFormDetail" -d "CRM_Client" > "DB Schema.html"
+
+rem sqlcmd -E -S localhost -i "Script_to_generate_DB_Document_Version_1.1.sql" -v FilterObjectName="" -d "CRM_Client" > "DB Schema.html"
+pause
+```
+
+
 ```sql
 --//SQL Database documentation script
 --//Author: Nitin Patel, Email: nitinpatel31@gmail.com
