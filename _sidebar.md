@@ -3,6 +3,7 @@
 * SQL Server
     * [使用 SQL Server Agent 排程執行 Stored Procedure](SqlServer/使用_SQL_Server_Agent_排程執行_Stored_Procedure.md)
     * [建立連結伺服器(DB LINK)](SqlServer/建立連結伺服器.md)
+    * [SQL Database documentation script](SqlServer/Script_to_generate_DB_Document_Version_1.1.md)
 * 程式設計
     * [瘋狂程設使用手冊](Programming/CodingFrenzy/Readme.md)
 * Git
