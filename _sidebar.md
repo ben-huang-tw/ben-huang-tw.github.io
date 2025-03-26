@@ -6,6 +6,7 @@
     * [SQL Database documentation script](SqlServer/Script_to_generate_DB_Document_Version_1.1.md)
 * 程式設計
     * [瘋狂程設使用手冊](Programming/CodingFrenzy/Readme.md)
+    * [在 VSCode 中開發 C++ 程式的入門指南](Programming/VSCode-CPP)
 * Git
     * [安裝 Git For Windows](Tools/Git/Install_Git_For_Windows/Readme.md)
     * [安裝 TortoiseGit](Tools/Git/Install-TortoiseGit/Readme.md)
